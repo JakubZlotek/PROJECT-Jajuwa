@@ -64,8 +64,8 @@ Enjoy that's all :D
 
 # Wymagania PL
 
-        - (OPCJONALNIE) Serwer Discord (do informowania o nowych cytatach)
-        - Baza danych MariaDB lub MySQL
+    - (OPCJONALNIE) Serwer Discord (do informowania o nowych cytatach)
+    - Baza danych MariaDB lub MySQL
 
 
 # Konfiguracja PL:
