@@ -40,25 +40,25 @@
 
 # Deleting discord module EN
 
-    - <b>delete from: insert.php</b>
+  - <b>delete from: insert.php</b>
 
-    ```php
-    // load Webhook
-    require_once "DiscordWebhook.php";
-    require_once "DiscordEmbed.php";
+  ```php
+  // load Webhook
+  require_once "DiscordWebhook.php";
+  require_once "DiscordEmbed.php";
 
-    $webhook = [
-      "url" => "discord webhook link here",
-      "username" => "",
-      "avatar" => ""
-    ];
-    $message    = "Ktos cos dodal na jajuwe";
-    $msg = new DiscordWebhook($webhook["url"]);
+  $webhook = [
+    "url" => "discord webhook link here",
+    "username" => "",
+    "avatar" => ""
+  ];
+  $message    = "Ktos cos dodal na jajuwe";
+  $msg = new DiscordWebhook($webhook["url"]);
 
-    $msg->setMessage($message)->setUsername("test")->setAvatar("")->setTts("")->send();
-    ````
-    - <b>Delete file: DiscordEmbed.php</b>
-    - <b>Delete file: Discord Webhook.php</b>
+  $msg->setMessage($message)->setUsername("test")->setAvatar("")->setTts("")->send();
+  ````
+  - <b>Delete file: DiscordEmbed.php</b>
+  - <b>Delete file: Discord Webhook.php</b>
 
 Enjoy that's all :D
 
