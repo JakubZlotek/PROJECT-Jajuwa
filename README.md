@@ -123,7 +123,7 @@ Enjoy that's all :D
 
   $msg->setMessage($message)->setUsername("test")->setAvatar("")->setTts("")->send();
   ````
-  - <b>Delete file: DiscordEmbed.php</b>
-  - <b>Delete file: Discord Webhook.php</b>
+  - <b>Usuń plik: DiscordEmbed.php</b>
+  - <b>Usuń plik: Discord Webhook.php</b>
 
 To wszystko miłego użytkowania :D
