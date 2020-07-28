@@ -106,7 +106,7 @@ Done :D
 
 # Usuwanie modułu discorda PL
 
-  - <b>delete from: insert.php</b>
+  - <b>Usuń z pliku: insert.php</b>
 
   ```php
   // load Webhook
