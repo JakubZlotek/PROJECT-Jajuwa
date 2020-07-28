@@ -64,41 +64,41 @@ Enjoy that's all :D
 
 # Wymagania PL
 
-    - (OPCJONALNIE) Serwer Discord (do informowania o nowych cytatach)
-    - Baza danych MariaDB lub MySQL
+  - (OPCJONALNIE) Serwer Discord (do informowania o nowych cytatach)
+  - Baza danych MariaDB lub MySQL
 
 
 # Konfiguracja PL:
 
-    - <b>w pliku: index.php</b>
-    ```php
-      $conn = mysqli_connect('localhost','user','password','database');
-    ````
-    wypełnij danymi do twojej bazy danych
+  - <b>w pliku: index.php</b>
+  ```php
+    $conn = mysqli_connect('localhost','user','password','database');
+  ````
+  wypełnij danymi do twojej bazy danych
 
-    - <b>Inside insert.php:</b>
-    ```php
-     $con = mysqli_connect('localhost','user','password','database');
-    ````
-    Tak samo jak w pliku <b>index.php</b> poprostu wypełnij danymi do twojej bazy danych
+  - <b>Inside insert.php:</b>
+  ```php
+   $con = mysqli_connect('localhost','user','password','database');
+  ````
+  Tak samo jak w pliku <b>index.php</b> poprostu wypełnij danymi do twojej bazy danych
 
-    ```php
-     "url" => "discord webhook link here",
-    ````
-    w miejscu <b>discord webhook link here</b> wstaw link webhooka twojego serwera discord
+  ```php
+   "url" => "discord webhook link here",
+  ````
+  w miejscu <b>discord webhook link here</b> wstaw link webhooka twojego serwera discord
 
-    - <b>Wykonaj w swojej bazie danych:</b>
+  - <b>Wykonaj w swojej bazie danych:</b>
 
-    ```sql
-    CREATE TABLE `cytaty_tabela` (
-      `id` int(50) NOT NULL,
-      `cytat` varchar(80) NOT NULL,
-      `osoba` varchar(50) NOT NULL,
-      `date_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-      `ip` varchar(50) NOT NULL,
-      `zatwierdzony` enum('0','1') NOT NULL
-    )
-    ````
+  ```sql
+  CREATE TABLE `cytaty_tabela` (
+    `id` int(50) NOT NULL,
+    `cytat` varchar(80) NOT NULL,
+    `osoba` varchar(50) NOT NULL,
+    `date_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `ip` varchar(50) NOT NULL,
+    `zatwierdzony` enum('0','1') NOT NULL
+  )
+  ````
 
 
 
