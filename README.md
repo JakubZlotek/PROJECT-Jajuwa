@@ -60,7 +60,7 @@
   - <b>Delete file: DiscordEmbed.php</b>
   - <b>Delete file: Discord Webhook.php</b>
 
-Enjoy that's all :D
+Done :D
 
 # Wymagania PL
 
@@ -126,4 +126,4 @@ Enjoy that's all :D
   - <b>Usuń plik: DiscordEmbed.php</b>
   - <b>Usuń plik: Discord Webhook.php</b>
 
-To wszystko miłego użytkowania :D
+Gotowe :D
