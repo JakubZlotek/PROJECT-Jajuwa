@@ -52,7 +52,7 @@
     "username" => "",
     "avatar" => ""
   ];
-  $message    = "Ktos cos dodal na jajuwe";
+  $message    = "Someone added a quote to jajuwa";
   $msg = new DiscordWebhook($webhook["url"]);
 
   $msg->setMessage($message)->setUsername("test")->setAvatar("")->setTts("")->send();
