@@ -1,4 +1,6 @@
-
+# Authors
+- [Jakub Złotek](https://github.com/JakubZlotek)
+- [Daniel Kamiński](https://github.com/EVBlue)
 
 # Requirements EN
 
