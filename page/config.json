@@ -1,7 +1,0 @@
-{
-  "domain": "https://jajuwa.pl/",
-  "domain_api": {
-    "host": "https://api.jajuwa.pl/",
-    "port": 80
-  }
-}
