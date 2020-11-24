@@ -4,7 +4,7 @@
 
      var config = {
          method: 'GET',
-         url: 'load.php'
+         url: 'server/load.php'
      };
      $http(config).then(function (response) {
          $scope.Cytaty = response.data;

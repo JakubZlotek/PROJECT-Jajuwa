@@ -6,36 +6,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/main.css">
   <title>Document</title>
 </head>
 
 <body>
 
-
-
-
-
-  
   <div class="container">
-    <div ng-app="JajuwaApp" ng-controller="JajuwaController">
-      <table class="table table-bordered">
-        <tr>
-          <th>Cytat</th>
-          <th>Inicjały</th>
-        </tr>
-        <tr ng-repeat="x in Cytaty">
-          <td>{{x.cytat}}</td>
-          <td>{{x.osoba}}</td>
-        </tr>
-      </table>
+
+    <div class="col-md-12">
+      <div class="box">
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Dodaj cytat!
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Dodawanie cytatu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="insert.php" method="post">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1" style="color: #000;">Cytat</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="np. Słonie latają" name="cytat">
+                    <small id="emailHelp" class="form-text text-muted">Dodawanie treści innych niż cytaty może zakończyć się banem.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1" style="color: #000;">Inicjały</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="np. MG" name="osoba">
+                  </div>
+                  <small class="form-text text-muted">Cytat pojawi się na stronie po zaakceptowaniu przez administratora.</small>
+               
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                <button type="button" class="btn btn-primary" type="submit" >Dodaj</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+
+        <div ng-app="JajuwaApp" ng-controller="JajuwaController">
+          <table class="table table-bordered">
+            <tr>
+              <th>Cytat</th>
+              <th>Inicjały</th>
+            </tr>
+            <tr ng-repeat="x in Cytaty">
+              <td>{{x.cytat}}</td>
+              <td>{{x.osoba}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
+
+
+
+
+    <script src="script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
   </div>
-
-  <script src="script.js"></script>
-
-  
-
 
 </body>
 
