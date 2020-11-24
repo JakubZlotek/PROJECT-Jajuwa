@@ -12,14 +12,19 @@
 
 <body>
 
+
+
+
+
+  
   <div class="container">
-    <div ng-app="sa_display" ng-controller="controller" ng-init="display_data()">
+    <div ng-app="JajuwaApp" ng-controller="JajuwaController">
       <table class="table table-bordered">
         <tr>
           <th>Cytat</th>
           <th>Inicjały</th>
         </tr>
-        <tr ng-repeat="x in cytaty">
+        <tr ng-repeat="x in Cytaty">
           <td>{{x.cytat}}</td>
           <td>{{x.osoba}}</td>
         </tr>
@@ -27,8 +32,9 @@
     </div>
   </div>
 
-
   <script src="script.js"></script>
+
+  
 
 
 </body>

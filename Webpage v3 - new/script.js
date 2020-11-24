@@ -1,16 +1,15 @@
-var app = angular.module("sa_display", []);
-app.controller("controller", function($scope, $http) {
-    $scope.display_data = function() {
-        $http({
-            method: 'GET',
-            url: 'load.php'
-         }).then(function (data){
-            $scope.cytaty = data;
-            console.log(data);
-         },function (error){
-        
-         });
-    }
-});
+ var app = angular.module('JajuwaApp', []);
+ app.controller('JajuwaController', function ($scope, $http) {
 
 
+     var config = {
+         method: 'GET',
+         url: 'load.php'
+     };
+     $http(config).then(function (response) {
+         $scope.Cytaty = response.data;
+         console.log(response.data);
+     }, function () {});
+
+
+ });
