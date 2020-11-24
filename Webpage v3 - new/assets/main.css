@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,700;1,600&display=swap');
 
 
 body {
@@ -6,11 +6,23 @@ body {
     background: linear-gradient(90deg, rgba(36,218,204,1) 0%, rgba(255,0,241,1) 100%);
 }
 
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0
+  }
+
 .box {
     background: rgba(255, 255, 255, 0.753);
     padding: 3em;
     width: 100%;
     border-radius: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    z-index: 1;
 }
 
 .table-bordered td, .table-bordered th {
