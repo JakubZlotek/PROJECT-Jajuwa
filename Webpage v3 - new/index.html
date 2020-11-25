@@ -14,6 +14,9 @@
 
 <body>
 
+
+  <div id="informacjabox"></div>
+
   <div class="container">
 
     <div id="particles-js"></div>
@@ -25,13 +28,12 @@
         })
     </script>
 
-    <div class="col-md-12">
+    <div class="col-md-12" ng-app="JajuwaApp" ng-controller="JajuwaController" ng-init="displayData()">
       <div class="box">
 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           Dodaj cytat!
         </button>
-
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
@@ -47,26 +49,26 @@
                 <form action="insert.php" method="post">
                   <div class="form-group">
                     <label for="exampleInputEmail1" style="color: #000;">Cytat</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="np. Słonie latają" name="cytat">
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model="cytat" placeholder="np. Słonie latają" name="cytat">
                     <small id="emailHelp" class="form-text text-muted">Dodawanie treści innych niż cytaty może zakończyć się banem.</small>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1" style="color: #000;">Inicjały</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="np. MG" name="osoba">
+                    <input type="text" class="form-control" id="exampleInputPassword1" ng-model="osoba" placeholder="np. MG" name="osoba">
                   </div>
                   <small class="form-text text-muted">Cytat pojawi się na stronie po zaakceptowaniu przez administratora.</small>
                
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                <button type="button" class="btn btn-primary" type="submit" >Dodaj</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="addRow()" >Dodaj</button>
               </div>
             </form>
             </div>
           </div>
         </div>
 
-        <div ng-app="JajuwaApp" ng-controller="JajuwaController">
+        <div>
           <table class="table table-bordered">
             <tr>
               <th>Cytat</th>

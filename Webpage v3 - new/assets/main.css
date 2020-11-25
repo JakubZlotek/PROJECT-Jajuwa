@@ -32,3 +32,20 @@ body {
 .table-bordered {
     border: transparent !important;
 }
+
+#informacjabox {
+    margin-left: 10px;
+    position: absolute;
+    width: 350px;
+    top:0;
+    z-index:100;
+}
+
+.informacja {
+    transition: 1.5s opacity;
+}
+
+.informacja.fade-out {
+    opacity: 0;
+    transition: none;
+  }
