@@ -23,7 +23,7 @@ $osoba = $_POST["osoba"];
   ];
 
 
-  $message    = "Nowy cytat na jajuwie: " .  $_POST["cytat"] . " Osoba: " .  $_POST["osoba"];
+  $message    = "Nowy cytat na jajuwie: " .  $_POST["cytat"] . " autorstwa: " .  $_POST["osoba"];
   $msg = new DiscordWebhook($webhook["url"]);
 
   $msg->setMessage($message)->setUsername("ToWcaleNieBabelan w skrócie TWNB")->setAvatar("")->setTts("")->send();

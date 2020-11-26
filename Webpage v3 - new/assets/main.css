@@ -53,3 +53,11 @@ body {
 .banner {
     width: 100%;
 }
+
+.wysz{
+    margin-right: 0;
+    background-color:transparent;
+    border:transparent !important;
+    border-bottom: 1px solid rgb(110, 110, 110) !important;
+    float: right;
+}
