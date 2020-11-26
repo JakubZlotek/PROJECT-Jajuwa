@@ -1,4 +1,8 @@
  <?php
+
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
  $conn = mysqli_connect("localhost", "root", "", "cytaty_db");
  $output = array();
  $query = "SELECT id, cytat, osoba FROM cytaty_tabela ORDER BY id DESC";
