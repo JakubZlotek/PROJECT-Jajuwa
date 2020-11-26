@@ -11,6 +11,15 @@
          }, () => {});
      };
 
+     setInterval(
+        function(){ 
+            $scope.displayData();
+            console.log("Getting new data...");
+        },10000
+     );
+
+
+
      function sleep(time) {
          return new Promise((resolve) => setTimeout(resolve, time));
      }
