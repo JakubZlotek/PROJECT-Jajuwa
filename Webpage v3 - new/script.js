@@ -9,6 +9,7 @@
          $http(config).then((response) => {
              $scope.Cytaty = response.data.cytaty;
              $scope.Cytaty_count = response.data.count;
+             $scope.Cytaty_leaderboard = response.data.leaderboard;
          }, () => {});
      };
 

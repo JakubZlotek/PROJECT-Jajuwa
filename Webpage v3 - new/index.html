@@ -24,7 +24,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
       particlesJS.load('particles-js', 'assets/particles.json',
-        function() {
+        function () {
           console.log('Po co tu wchodzisz?')
         })
     </script>
@@ -38,17 +38,10 @@
 
         <p>Mamy już: {{Cytaty_count}} cytatów!</p>
 
-        <button type="button" class="btn btn-primary jajuwa-btn" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-primary jajuwa-btn" data-toggle="modal" data-target="#Leaderboard">
           Dodaj cytat!
         </button>
 
-
-          <input class ="wysz" type="text" ng-model="cytfil" placeholder="Wyszukaj cytat lub osobe">
-
-        
-        
-
-        <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -63,24 +56,74 @@
                 <form action="insert.php" method="post">
                   <div class="form-group">
                     <label for="exampleInputEmail1" style="color: #000;">Cytat</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model="cytat" placeholder="np. Słonie latają" name="cytat">
-                    <small id="emailHelp" class="form-text text-muted">Dodawanie treści innych niż cytaty może zakończyć się banem.</small>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                      ng-model="cytat" placeholder="np. Słonie latają" name="cytat">
+                    <small id="emailHelp" class="form-text text-muted">Dodawanie treści innych niż cytaty może zakończyć
+                      się banem.</small>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1" style="color: #000;">Inicjały</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" ng-model="osoba" placeholder="np. MG" name="osoba">
+                    <input type="text" class="form-control" id="exampleInputPassword1" ng-model="osoba"
+                      placeholder="np. MG" name="osoba">
                   </div>
-                  <small class="form-text text-muted">Cytat pojawi się na stronie po zaakceptowaniu przez administratora.</small>
-               
+                  <small class="form-text text-muted">Cytat pojawi się na stronie po zaakceptowaniu przez
+                    administratora.</small>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="addRow()" >Dodaj</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="addRow()">Dodaj</button>
               </div>
-            </form>
+              </form>
             </div>
           </div>
         </div>
+
+
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary jajuwa-btn" data-toggle="modal" data-target="#Leaderboard">
+  Ranking Jajuwy
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="Leaderboard" tabindex="-1" aria-labelledby="LeaderboardLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="LeaderboardLabel">Ranking Jajuwy</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+          <tr>
+            <th>Osoba</th>
+            <th>Ilość</th>
+          </tr>
+          <tr ng-repeat="x in Cytaty_leaderboard">
+            <td>{{x.osoba}}</td>
+            <td>{{x.number}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <input class="wysz" type="text" ng-model="cytfil" placeholder="Wyszukaj cytat lub osobe">
+
+
+
+
+
+
+
+
 
         <div>
           <br>

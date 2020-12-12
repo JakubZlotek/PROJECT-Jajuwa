@@ -16,11 +16,25 @@ header("Content-Type: application/json; charset=UTF-8");
  }
 
  
- $query2 = "SELECT id FROM cytaty_tabela";
- $result2 = mysqli_query($conn, $query2);
+$query2 = "SELECT id FROM cytaty_tabela";
+$result2 = mysqli_query($conn, $query2);
+
+
+
+
+
+$query3 = "SELECT osoba, count(*) as number FROM cytaty_tabela GROUP BY osoba ORDER BY count(*) DESC;";
+$result3 = mysqli_query($conn, $query3);
+if(mysqli_num_rows($result3) > 0) {
+     while($row3 = mysqli_fetch_array($result3)) {
+          $output3[] = $row3;
+     }
+ 
+}
 
 $jso["cytaty"] = $output;
 $jso["count"] = mysqli_num_rows($result2);
+$jso["leaderboard"] = $output3;
 
 
  echo json_encode($jso);
