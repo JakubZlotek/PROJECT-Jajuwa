@@ -4,6 +4,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
  $conn = mysqli_connect("localhost", "root", "", "cytaty_db");
+ $jso = array();
  $output = array();
  $query = "SELECT id, cytat, osoba FROM cytaty_tabela ORDER BY id DESC";
  $result = mysqli_query($conn, $query);
@@ -11,6 +12,17 @@ header("Content-Type: application/json; charset=UTF-8");
       while($row = mysqli_fetch_array($result)) {
            $output[] = $row;
       }
-      echo json_encode($output);
+  
  }
+
+ 
+ $query2 = "SELECT id FROM cytaty_tabela";
+ $result2 = mysqli_query($conn, $query2);
+
+$jso["cytaty"] = $output;
+$jso["count"] = mysqli_num_rows($result2);
+
+
+ echo json_encode($jso);
+
  ?>

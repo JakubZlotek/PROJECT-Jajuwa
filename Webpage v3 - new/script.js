@@ -7,15 +7,18 @@
              url: 'server/load.php'
          };
          $http(config).then((response) => {
-             $scope.Cytaty = response.data;
+             $scope.Cytaty = response.data.cytaty;
+             $scope.Cytaty_count = response.data.count;
          }, () => {});
      };
 
+
+
      setInterval(
-        function(){ 
-            $scope.displayData();
-            console.log("Getting new data...");
-        },10000
+         function () {
+             $scope.displayData();
+             console.log("Getting new data...");
+         }, 10000
      );
 
 

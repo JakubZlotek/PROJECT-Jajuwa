@@ -29,11 +29,14 @@
         })
     </script>
 
-    <div class="col-md-12" ng-app="JajuwaApp" ng-controller="JajuwaController" ng-init="displayData()">
+    <div class="col-md-12" ng-app="JajuwaApp" ng-controller="JajuwaController" ng-init="displayData();countData();">
 
       <img src="assets/banner.png" class="banner">
 
       <div class="box">
+
+
+        <p>Mamy już: {{Cytaty_count}} cytatów!</p>
 
         <button type="button" class="btn btn-primary jajuwa-btn" data-toggle="modal" data-target="#exampleModal">
           Dodaj cytat!
@@ -43,7 +46,7 @@
           <input class ="wysz" type="text" ng-model="cytfil" placeholder="Wyszukaj cytat lub osobe">
 
         
-
+        
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
