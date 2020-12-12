@@ -2,8 +2,15 @@
 
 
 body {
-    background: rgb(36,218,204);
-    background: linear-gradient(90deg, rgba(36,218,204,1) 0%, rgba(255,0,241,1) 100%);
+    background: rgb(36, 218, 204);
+    background: linear-gradient(90deg, rgba(36, 218, 204, 1) 0%, rgba(255, 0, 241, 1) 100%);
+    animation: fadein 5s;
+    -moz-animation: fadein 5s;
+    /* Firefox */
+    -webkit-animation: fadein 5s;
+    /* Safari and Chrome */
+    -o-animation: fadein 5s;
+    /* Opera */
 }
 
 #particles-js {
@@ -13,7 +20,7 @@ body {
     z-index: 0;
     top: 0;
     left: 0
-  }
+}
 
 .box {
     background: rgba(255, 255, 255, 0.753);
@@ -25,7 +32,8 @@ body {
     z-index: 1;
 }
 
-.table-bordered td, .table-bordered th {
+.table-bordered td,
+.table-bordered th {
     border: transparent !important;
 }
 
@@ -37,8 +45,8 @@ body {
     margin-left: 10px;
     position: absolute;
     width: 350px;
-    top:0;
-    z-index:100;
+    top: 0;
+    z-index: 100;
 }
 
 .informacja {
@@ -48,21 +56,21 @@ body {
 .informacja.fade-out {
     opacity: 0;
     transition: none;
-  }
+}
 
 .banner {
     width: 100%;
 }
 
-.wysz{
+.wysz {
     margin-right: 0;
-    background-color:transparent;
-    border:transparent !important;
+    background-color: transparent;
+    border: transparent !important;
     border-bottom: 1px solid rgb(110, 110, 110) !important;
     float: right;
 }
 
-.jajuwa-btn{
+.jajuwa-btn {
     color: rgb(43, 126, 194);
     background-color: transparent;
     border: 1px solid rgb(43, 126, 194) !important;
@@ -70,6 +78,58 @@ body {
 }
 
 .jajuwa-btn:hover {
-    color:#fff;
+    color: #fff;
     background-color: rgb(43, 126, 194);
+}
+
+
+
+
+
+
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+
+    /* Firefox */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+
+    /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+
+    /* Opera */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
