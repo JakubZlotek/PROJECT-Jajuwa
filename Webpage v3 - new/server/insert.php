@@ -1,4 +1,4 @@
- <?php
+<?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
     $_POST = json_decode(file_get_contents('php://input'), true);
@@ -25,8 +25,10 @@ $osoba = $_POST["osoba"];
 
   $message    = "Nowy cytat na jajuwie: " .  $_POST["cytat"] . " autorstwa: " .  $_POST["osoba"];
   $msg = new DiscordWebhook($webhook["url"]);
-
-  $msg->setMessage($message)->setUsername("ToWcaleNieBabelan w skrócie TWNB")->setAvatar("")->setTts("")->send();
+  $embed = new Embed();
+  $desription = "IP: " . $_SERVER['REMOTE_ADDR'];
+  $embed->title("NOWY CYTAT NA JAJUWIE!")->description($desription)->setField($_POST["cytat"],$_POST["osoba"])
+  $msg->setUsername("ToWcaleNieBabelan w skrócie TWNB")->embed($embed)->send();
 
 
 
