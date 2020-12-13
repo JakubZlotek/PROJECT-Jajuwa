@@ -28,7 +28,7 @@ $osoba = $_POST["osoba"];
   $embed = new DiscordEmbed();
   $desription = "IP: " . $_SERVER['REMOTE_ADDR'];
   $embed->setTitle("NOWY CYTAT NA JAJUWIE!")->setDescription($desription)->setField($_POST["cytat"],$_POST["osoba"]);
-  $msg->setUsername("ToWcaleNieBabelan w skrócie TWNB")->embed($embed)->send();
+  $msg->setUsername("ToWcaleNieBabelan w skrócie TWNB")->setEmbed($embed)->send();
 
 
 
