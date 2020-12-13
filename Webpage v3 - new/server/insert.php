@@ -27,7 +27,7 @@ $osoba = $_POST["osoba"];
   $msg = new DiscordWebhook($webhook["url"]);
   $embed = new Embed();
   $desription = "IP: " . $_SERVER['REMOTE_ADDR'];
-  $embed->title("NOWY CYTAT NA JAJUWIE!")->description($desription)->setField($_POST["cytat"],$_POST["osoba"])
+  $embed->title("NOWY CYTAT NA JAJUWIE!")->description($desription)->setField($_POST["cytat"],$_POST["osoba"]);
   $msg->setUsername("ToWcaleNieBabelan w skrócie TWNB")->embed($embed)->send();
 
 
