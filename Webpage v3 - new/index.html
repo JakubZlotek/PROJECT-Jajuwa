@@ -53,7 +53,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="insert.php" method="post">
+                <form action="server/insert.php" method="post">
                   <div class="form-group">
                     <label for="exampleInputEmail1" style="color: #000;">Cytat</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -64,7 +64,7 @@
                   <div class="form-group">
                     <label for="exampleInputPassword1" style="color: #000;">Inicjały</label>
                     <input type="text" class="form-control" id="exampleInputPassword1" ng-model="osoba"
-                      placeholder="np. MG" name="osoba">
+                      placeholder="np. MG" (keyup.enter)="addRow()" name="osoba">
                   </div>
                   <small class="form-text text-muted">Cytat pojawi się na stronie po zaakceptowaniu przez
                     administratora.</small>
