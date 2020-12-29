@@ -2,7 +2,7 @@
   "name": "jajuwaapi",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "/app.js",
   "type": "module",
   "scripts": {
     "start": "nodemon app.js"
@@ -10,6 +10,8 @@
   "author": "Jakub Złotek",
   "license": "MIT",
   "dependencies": {
+    "canvas": "^2.6.1",
+    "canvas-constructor": "^4.1.0",
     "express": "^4.17.1",
     "mysql": "^2.18.1"
   },
