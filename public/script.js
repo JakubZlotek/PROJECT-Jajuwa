@@ -3,7 +3,7 @@ app.controller("JajuwaController", ($scope, $http) => {
   $scope.displayCytaty = function () {
     var config = {
       method: "GET",
-      url: "/api/cytaty",
+      url: "/cytaty",
     };
     $http(config).then(
       (response) => {
@@ -63,12 +63,8 @@ app.controller("JajuwaController", ($scope, $http) => {
       $scope.Cytaty.unshift(data);
 
       var config = {
-        method: "POST",
-        url: "/api/cytaty",
-        data: {
-          cytat: $scope.cytat,
-          osoba: $scope.osoba,
-        },
+        method: "GET",
+        url: "/api/cytaty/" + $scope.osoba + '/' + $scope.cytat
       };
       $http(config).then(
         () => {

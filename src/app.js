@@ -12,6 +12,9 @@ const PORT = 5000;
 app.use(bodyParser.json());
 
 /*
+
+! The public folder is currently not working it needs angularjs post method change
+
 app.use('/', express.static(__dirname + "/public"));
 app.get('/', function(req, res) {
   res.sendFile(__dirname + "/public");
