@@ -11,9 +11,9 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:img/:text", async (req, res) => {
-  const bg = await canvas.loadImage(__dirname + "/data/bg.png");
+  const bg = await canvas.loadImage(__dirname + "/src/data/bg.png");
   const img = await canvas.loadImage(
-    __dirname + "/data/img/" + req.params.img + ".png"
+    __dirname + "/src/data/img/" + req.params.img + ".png"
   );
 
   let image = new Canvas(600, 600)
