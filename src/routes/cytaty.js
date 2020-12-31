@@ -15,10 +15,12 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "cytaty_db",
+  database: "cytaty_db"
 });
 
-db.connect();
+db.connect((err) => {
+  if (err) console.log(err);
+});
 
 
 
@@ -46,14 +48,11 @@ router.post("/", (req, res) => {
   var osoba = req.body.osoba;
 
   let sql =
-    "INSERT INTO cytaty_tabela (cytat, osoba) VALUES ('" +
-    cytat +
-    "','" +
-    osoba +
-    "')";
+    "INSERT INTO cytaty_tabela (cytat, osoba) VALUES (?,?)";
 
-  db.query(sql, (err, result) => {
+  db.query(sql, [cytat,osoba], (err, result) => {
     if (err) throw err;
+    console.log(result);
   });
   res.send(`Cytat dodany do bazy danych! Treść: ${cytat} Osoba: ${osoba}`);
 });
