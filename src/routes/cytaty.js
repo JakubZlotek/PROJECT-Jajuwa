@@ -1,5 +1,15 @@
 import express from "express";
 import mysql from "mysql";
+import bodyParser from "body-parser";
+
+
+const router = express.Router();
+router.use(bodyParser.json());
+
+
+
+
+
 
 const db = mysql.createConnection({
   host: "localhost",
@@ -8,14 +18,14 @@ const db = mysql.createConnection({
   database: "cytaty_db",
 });
 
-db.connect((err) => {
-  if (err) {
-    throw err;
-  }
-  console.log("MySQL database connection ok!");
-});
+db.connect();
 
-const router = express.Router();
+
+
+
+
+
+// GET > cytaty
 
 router.get("/", (req, res) => {
   let sql = "SELECT cytat, osoba FROM cytaty_tabela";
@@ -28,32 +38,12 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/leaderboard", (req, res) => {
-  let sql =
-    "SELECT osoba, count(*) as number FROM cytaty_tabela GROUP BY osoba ORDER BY count(*) DESC;";
 
-  db.query(sql, (err, result) => {
-    if (err) throw err;
-    var leaderboardobj = Object.assign({}, result);
-    res.setHeader("Content-Type", "application/json");
-    res.end(JSON.stringify(leaderboardobj));
-  });
-});
+// {cytat + osoba} > POST > dodanie cytatu
 
-router.get("/count", (req, res) => {
-  let sql = "SELECT count(id) as co FROM cytaty_tabela";
-
-  db.query(sql, (err, result) => {
-    if (err) throw err;
-    res.json({
-      count: result[0].co,
-    });
-  });
-});
-
-router.get("/add/:osoba/:cytat", (req, res) => {
-  var cytat = req.params.cytat;
-  var osoba = req.params.osoba;
+router.post("/", (req, res) => {
+  var cytat = req.body.cytat;
+  var osoba = req.body.osoba;
 
   let sql =
     "INSERT INTO cytaty_tabela (cytat, osoba) VALUES ('" +
@@ -67,5 +57,37 @@ router.get("/add/:osoba/:cytat", (req, res) => {
   });
   res.send(`Cytat dodany do bazy danych! Treść: ${cytat} Osoba: ${osoba}`);
 });
+
+// GET > ranking
+
+router.get("/leaderboard", (req, res) => {
+  let sql =
+    "SELECT osoba, count(*) as number FROM cytaty_tabela GROUP BY osoba ORDER BY count(*) DESC;";
+
+  db.query(sql, (err, result) => {
+    if (err) throw err;
+    var leaderboardobj = Object.assign({}, result);
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify(leaderboardobj));
+  });
+});
+
+// GET > ogolna ilosc cytatow
+
+router.get("/count", (req, res) => {
+  let sql = "SELECT count(id) as co FROM cytaty_tabela";
+
+  db.query(sql, (err, result) => {
+    if (err) throw err;
+    res.json({
+      count: result[0].co,
+    });
+  });
+});
+
+
+
+
+
 
 export default router;
