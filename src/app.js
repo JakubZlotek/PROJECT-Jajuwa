@@ -26,8 +26,9 @@ app.get("/", (req, res) => {
     Wiadomosc: "Witamy w oficjalym REST API JAJUWY!",
     endpoints: [
       "GET /cytaty",
+      "POST /cytaty",
       "GET /cytaty/leaderboard",
-      "GET /cytaty/add/[osoba]/[cytat]",
+      "GET /cytaty/count",
       "GET /memy/[numer zjecia]/[tekst]",
     ],
   });
